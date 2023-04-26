@@ -1,0 +1,107 @@
+.button{
+    border-style: none;
+    height: 40px;
+    padding: 6px 12px;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: box-shadow .6s ease;
+}
+
+.button.blue{
+    box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display: inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+
+button.green{
+    box-shadow:inset 0px 1px 3px 0px #9acc85;
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background-color:#74ad5a;
+	border-radius:5px;
+	border:1px solid #3b6e22;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #92b879;
+}
+
+button.red{
+    box-shadow:inset 0px 1px 3px 0px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border-radius:5px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #810e05;
+	transition: box-shadow .6s ease;
+}
+
+.button:hover{
+    box-shadow: inset 200px 0 0 #00000055;
+}
+
+@media(max-width:480px){
+    .button.mobile{
+        color:transparent;
+        font-size:0;
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        position: fixed;
+        top: 90vh;
+        left: 80vw;
+    }
+    .button.mobile::before{
+        content: "+";
+        color:black;
+        font-size:2rem;
+        width:100%;
+        height:100%;
+    }
+}
+
+.voltar{
+	box-shadow:inset 0px 1px 3px 0px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border-radius:5px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #810e05;
+	transition: box-shadow .6s ease;
+}
+.voltar:hover {
+    box-shadow: inset 200px 0 0 #00000055;
+}

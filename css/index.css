@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+body{
+    background-image: url(../img/consultório.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+	box-sizing: border-box;
+}
+
+nav{
+	background-color:rgba(0, 0, 0, 0.55) ;
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+}
+
+nav a{
+	color: #ffffff;
+	float: right;
+	display: block;
+	padding: 14px 16px;
+	text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav a:hover{
+	transition: 0.5s;
+	background-color: #e4e4e4e4;
+	color: #333333;
+}
+
+main{
+    display: flex;
+    margin: 85px 200px;
+}
+
+#container-fundo{
+    background-color: rgb(24, 109, 103);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+}
+
+#dov{
+    display: flex;
+    justify-content: center;
+}
+
+#logo{
+    margin-right: 50px;
+    margin-top: 100px;
+    width: 1000px;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    text-align: center;
+    font-weight: 200;
+    padding: 15px;
+    margin-top: 150px;
+}
