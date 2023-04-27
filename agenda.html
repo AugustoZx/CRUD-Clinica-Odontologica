@@ -28,9 +28,9 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Especialidade</th>
-                    <th>CPF</th>
+                    <th>Gênero</th>
+                    <th>Médico</th>
+                    <th>Data</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -45,11 +45,10 @@
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
-                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Médico"
-                        required>
-                    <input type="email" id="email" class="modal-field" placeholder="e-mail do Médico" required>
-                    <input type="text" id="especialidade" class="modal-field" placeholder="Especialidade" required>
-                    <input type="CPF" id="cpf" class="modal-field" placeholder="CPF do Médico" required>
+                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Paciente"required>
+                    <input type="text" id="genero" class="modal-field" placeholder="Gênero" required>
+                    <input type="text" id="medico" class="modal-field" placeholder="Nome do Médico" required>
+                    <input type="date" id="data" class="modal-field">
                 </form>
                 <footer class="modal-footer">
                     <button id="salvar" class="button green">Salvar</button>

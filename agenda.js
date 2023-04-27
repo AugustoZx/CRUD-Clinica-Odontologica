@@ -19,18 +19,18 @@ const deleteAgenda = (index) => {
     setLocalStorage(dbAgenda)
 }
 
-const updateMedic = (index, medic) => {
-    const dbMedic = readMedic()
-    dbMedic[index] = medic
-    setLocalStorage(dbMedic)
+const updateAgenda = (index, agenda) => {
+    const dbAgenda = readAgenda()
+    dbAgenda[index] = agenda
+    setLocalStorage(dbAgenda)
 }
 
-const readMedic = () => getLocalStorage()
+const readAgenda = () => getLocalStorage()
 
-const createMedic = (medic) => {
-    const dbMedic = getLocalStorage()
-    dbMedic.push (medic)
-    setLocalStorage(dbMedic)
+const createAgenda = (agenda) => {
+    const dbAgenda = getLocalStorage()
+    dbAgenda.push (agenda)
+    setLocalStorage(dbAgenda)
 }
 
 const isValidFields = () => {
@@ -43,38 +43,38 @@ const clearFields = () => {
     const fields = document.querySelectorAll('.modal-field')
     fields.forEach(field => field.value = "")
     document.getElementById('nome').dataset.index = 'new'
-    document.querySelector(".modal-header>h2").textContent  = 'Novo Médico'
+    document.querySelector(".modal-header>h2").textContent  = 'Nova Consulta'
 }
 
-const saveMedic = () => {
+const saveAgenda = () => {
     if (isValidFields()) {
-        const medic = {
+        const agenda = {
             nome: document.getElementById('nome').value,
-            email: document.getElementById('email').value,
-            especialidade: document.getElementById('especialidade').value,
-            cpf: document.getElementById('cpf').value
+            genero: document.getElementById('genero').value,
+            medico: document.getElementById('medico').value,
+            data: document.getElementById('data').value
         }
         const index = document.getElementById('nome').dataset.index
-        const response = alert(`O médico ${medic.nome} foi cadastrado com sucesso`)
+        const response = alert(`A consulta de ${agenda.nome} foi marcada com sucesso`)
         if (index == 'new') {
-            createMedic(medic)
+            createAgenda(agenda)
             updateTable()
             closeModal()
         } else {
-            updateMedic(index, medic)
+            updateAgenda(index, agenda)
             updateTable()
             closeModal()
         }
     }
 }
 
-const createRow = (medic, index) => {
+const createRow = (agenda, index) => {
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
-        <td>${medic.nome}</td>
-        <td>${medic.email}</td>
-        <td>${medic.especialidade}</td>
-        <td>${medic.cpf}</td>
+        <td>${agenda.nome}</td>
+        <td>${agenda.genero}</td>
+        <td>${agenda.medico}</td>
+        <td>${agenda.data}</td>
         <td>
             <button type="button" class="button green" id="edit-${index}">Editar</button>
             <button type="button" class="button red" id="delete-${index}" >Excluir</button>
@@ -89,24 +89,24 @@ const clearTable = () => {
 }
 
 const updateTable = () => {
-    const dbMedic = readMedic()
+    const dbMedic = readAgenda()
     clearTable()
     dbMedic.forEach(createRow)
 }
 
-const fillFields = (medic) => {
-    document.getElementById('nome').value = medic.nome
-    document.getElementById('email').value = medic.email
-    document.getElementById('especialidade').value = medic.especialidade
-    document.getElementById('cpf').value = medic.cpf
-    document.getElementById('nome').dataset.index = medic.index
+const fillFields = (agenda) => {
+    document.getElementById('nome').value = agenda.nome
+    document.getElementById('genero').value = agenda.genero
+    document.getElementById('medico').value = agenda.medico
+    document.getElementById('data').value = agenda.data
+    document.getElementById('nome').dataset.index = agenda.index
 }
 
 const editMedic = (index) => {
-    const medic = readMedic()[index]
-    medic.index = index
-    fillFields(medic)
-    document.querySelector(".modal-header>h2").textContent  = `Editando ${medic.nome}`
+    const agenda = readAgenda()[index]
+    agenda.index = index
+    fillFields(agenda)
+    document.querySelector(".modal-header>h2").textContent  = `Editando ${agenda.nome}`
     openModal()
 }
 
@@ -118,10 +118,10 @@ const editDelete = (event) => {
         if (action == 'edit') {
             editMedic(index)
         } else {
-            const medic = readMedic()[index]
-            const response = confirm(`Deseja realmente excluir o médico ${medic.nome} ?`)
+            const agenda = readAgenda()[index]
+            const response = confirm(`Deseja realmente excluir a consulta de ${agenda.nome} ?`)
             if (response) {
-                deleteMedic(index)
+                deleteAgenda(index)
                 updateTable()
             }
         }
@@ -138,7 +138,7 @@ document.getElementById('modalClose')
     .addEventListener('click', closeModal)
 
 document.getElementById('salvar')
-    .addEventListener('click', saveMedic)
+    .addEventListener('click', saveAgenda)
 
 document.querySelector('#tableMedic>tbody')
     .addEventListener('click', editDelete)

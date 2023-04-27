@@ -50,7 +50,7 @@ const saveClient = () => {
     if (isValidFields()) {
         const client = {
             nome: document.getElementById('nome').value,
-            email: document.getElementById('email').value,
+            genero: document.getElementById('genero').value,
             celular: document.getElementById('celular').value,
             cpf: document.getElementById('cpf').value
         }
@@ -72,7 +72,7 @@ const createRow = (client, index) => {
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
         <td>${client.nome}</td>
-        <td>${client.email}</td>
+        <td>${client.genero}</td>
         <td>${client.celular}</td>
         <td>${client.cpf}</td>
         <td>
@@ -96,7 +96,7 @@ const updateTable = () => {
 
 const fillFields = (client) => {
     document.getElementById('nome').value = client.nome
-    document.getElementById('email').value = client.email
+    document.getElementById('genero').value = client.genero
     document.getElementById('celular').value = client.celular
     document.getElementById('cpf').value = client.cpf
     document.getElementById('nome').dataset.index = client.index
