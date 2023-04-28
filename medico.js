@@ -46,6 +46,18 @@ const clearFields = () => {
     document.querySelector(".modal-header>h2").textContent  = 'Novo Médico'
 }
 
+const input = document.getElementById('cpf')
+
+input.addEventListener('keypress', () => {
+    let inputLength = input.value.length
+
+    if (inputLength === 3 || inputLength === 7){
+        input.value += '.'
+    }else if (inputLength === 11){
+        input.value += '-'
+    }
+})
+
 const saveMedic = () => {
     if (isValidFields()) {
         const medic = {
