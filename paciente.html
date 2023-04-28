@@ -45,9 +45,15 @@
                 </header>
                 <form id="form" class="modal-form">
                     <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Paciente" required>
-                    <input type="text" id="genero" class="modal-field" placeholder="Gênero" required>
-                    <input type="text" id="celular" class="modal-field" placeholder="Celular do Paciente" required>
-                    <input type="CPF" id="cpf" class="modal-field" placeholder="CPF do Paciente" required>
+                    <!-- <input type="text" id="genero" class="modal-field" placeholder="Gênero" required> -->
+                    <select id="genero" data-index="new" class="modal-field" placeholder="Gênero"required>
+                        <option value="" disable selected hidden>Gênero</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    <input type="text" autocompleteid="off" maxlength="15" id="celular" class="modal-field" placeholder="Celular do Paciente" required>
+                    <input type="text" autocompleteid="off" maxlength="14" id="cpf" class="modal-field" placeholder="CPF do Paciente" required>
                 </form>
                 <footer class="modal-footer">
                     <button id="salvar" class="button green">Salvar</button>

@@ -46,6 +46,32 @@ const clearFields = () => {
     document.querySelector(".modal-header>h2").textContent  = 'Novo Paciente'
 }
 
+const celular = document.getElementById('celular')
+
+celular.addEventListener('keypress', () => {
+    let celularLength = celular.value.length
+
+    if (celularLength === 0){
+        celular.value += '('
+    }else if (celularLength === 3){
+        celular.value += ') '
+    }else if (celularLength === 10){
+        celular.value += '-'
+    }
+})
+
+const input = document.getElementById('cpf')
+
+input.addEventListener('keypress', () => {
+    let inputLength = input.value.length
+
+    if (inputLength === 3 || inputLength === 7){
+        input.value += '.'
+    }else if (inputLength === 11){
+        input.value += '-'
+    }
+})
+
 const saveClient = () => {
     if (isValidFields()) {
         const client = {

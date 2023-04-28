@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/modal.css">
     <script src="agenda.js" defer></script>
+    <script src="paciente.js" defer></script>
+    <script src="medico.js" defer></script>
     <title>Agendamento | Odonto</title>
 </head>
 
@@ -41,12 +43,17 @@
         <div class="modal" id="modal">
             <div class="modal-content">
                 <header class="modal-header">
-                    <h2>Nova Consulta</h2>
+                    <h2>Novo Agendamento</h2>
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
-                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Paciente"required>
-                    <input type="text" id="genero" class="modal-field" placeholder="Gênero" required>
+                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Paciente" required>
+                    <select id="genero" data-index="new" class="modal-field" placeholder="Gênero"required>
+                        <option value="" disable selected hidden>Gênero</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outro">Outro</option>
+                    </select>
                     <input type="text" id="medico" class="modal-field" placeholder="Nome do Médico" required>
                     <input type="date" id="data" class="modal-field">
                 </form>
